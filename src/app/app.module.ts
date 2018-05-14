@@ -7,7 +7,8 @@ import { Error404Component } from './exception/error404/error404.component';
 import { Error500Component } from './exception/error500/error500.component';
 import { ErrorOtherComponent } from './exception/error-other/error-other.component';
 import { GlobalComponent } from './global/global.component';
-
+import { AuthGuard } from './guard/auth-guard';
+import { AuthService } from './guard/auth.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { GlobalComponent } from './global/global.component';
     ,AppRoutingModule
   ],
   providers: [
-    appRoutingProvisers
+    appRoutingProvisers, AuthGuard, AuthService
   ],
   bootstrap: [AppComponent]
 })

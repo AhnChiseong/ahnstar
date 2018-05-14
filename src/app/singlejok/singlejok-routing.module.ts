@@ -4,8 +4,10 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {path:'auth', loadChildren:'./auth/auth.module#AuthModule'},
+  {path:'member', loadChildren:'./member/member.module#MemberModule'},
+  //{path:'member', compon}
   {path:'', component:MainComponent}
-];
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
