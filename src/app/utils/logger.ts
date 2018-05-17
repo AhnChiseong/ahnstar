@@ -15,7 +15,11 @@ export class Logger {
     private loggerLevel:number      = this.LOGGER_DEBUG;
 
     public static getInstance(): Logger{
-        return this.uniqueInstance;         // 싱글톤으로 변경예정.
+        if(this.uniqueInstance == undefined){
+            this.uniqueInstance = new Logger();
+        }
+
+        return this.uniqueInstance;
     }
 
     public setLoggerLevel(loggerLevel:number):void{
@@ -41,7 +45,7 @@ export class Logger {
     }
 
     private print(level: number, title: string, message: string):void{
-        if(level > this.loggerLevel){
+        if(level >= this.loggerLevel){
             try{
                 console.log("[" + title + "] " + message);
             }catch(e){

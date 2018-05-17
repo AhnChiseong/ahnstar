@@ -10,6 +10,7 @@ import { GlobalComponent } from './global/global.component';
 import { AuthGuard } from './guard/auth-guard';
 import { AuthService } from './guard/auth.service';
 
+
 @NgModule({
   declarations: [
     AppComponent
